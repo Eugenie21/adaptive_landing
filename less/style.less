@@ -1,0 +1,251 @@
+@import "reset.less";
+@import "bootstrap/bootstrap.less";
+@import "font_awesome/font-awesome.less";
+
+//Colors
+@white: #fff;
+@black: #000;
+@blue: #4bcaff;
+@green: '';
+@orange: ''; 
+
+//Fonts
+@font-face {
+	font-family: "DroidSans";
+	src: url('../font/DroidSans.ttf'); 
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url('../font/Lato-Light.ttf');
+}
+
+//CUSTOM VARIABLES
+// @max_width: 1170px;
+
+//SOME MIXINS
+.sized() {
+	max-width: @screen-lg-min;
+	.center-block();
+}
+
+.border_radius(@value: 5px) {
+	-moz-border-radius: @value;
+	-webkit-border-radius: @value;
+	border-radius: @value;
+}
+
+.box_shadow(@dir,@hor,@vert,@spr,@size,@col) {
+	-moz-box-shadow: @dir,@hor,@vert,@spr,@size,@col;
+	-webkit-box-shadow: @dir,@hor,@vert,@spr,@size,@col;
+	box-shadow: @dir,@hor,@vert,@spr,@size,@col;
+}
+
+.adaptive_font_size(@size,@md_size,@sm_size,@xs_size) {
+
+	@media screen and (min-width: @screen-lg-min) {
+		font-size: @size;
+	}
+
+	@media screen and (max-width: @screen-md-max) {
+		font-size: @md_size;
+	}
+
+	@media screen and (max-width: @screen-sm-max) {
+		font-size: @sm_size;
+	}
+
+	@media screen and (max-width: @screen-xs-max) {
+		font-size: @xs_size;
+	}
+}
+
+body {
+	min-width: 650px;
+}
+
+//HEADER
+.head_wrap {
+	background-color: fade(@black, 30%);
+	position: fixed;
+
+	@media screen and (max-width: @screen-xs-max)  {
+		position: relative;
+	}
+	z-index: 10;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+	.header {
+		.sized();
+		font-family: "DroidSans";
+
+		.logo {
+			color: @white;
+			.adaptive_font_size(36px,36px,36px,36px);
+			// font-size: 36px;
+			line-height: 80px;
+
+			span {
+				color: @blue;
+				position: relative;
+
+				&:after {
+					content: '';
+					position: absolute;
+				}
+			}
+		}
+
+		.nav_bar {
+			text-align: right;
+
+			li {
+				display: inline-block;
+				margin-right: 20px;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+
+				a {
+					display: block;
+					.adaptive_font_size(13px,13px,10px,8px);
+					// font-size: 13px;
+					color: @white;
+					padding: 38px 0 40px 0;
+					border-top: 2px solid fade(@black,0%);
+
+					&:hover {
+						color: @blue;
+						border-color: @blue;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+//SLIDER
+.slider {
+	font-family: "Lato";
+	position: relative;
+	border-bottom: 4px solid @blue;
+
+	img {
+		width: 100%;
+	}
+
+	&_text {
+		color: @white;
+		position: absolute;
+		width: 40%;
+		top: 40%;
+
+		@media screen and (max-width: @screen-sm-max) {
+			top: 30%;
+		}
+
+		@media screen and (max-width: @screen-xs-max) {
+			top: 20%;
+		}
+		right: 15%;
+
+		h2 {
+			.adaptive_font_size(48px,30px,22px,20px);
+		}
+
+		p {
+			.adaptive_font_size(18px,16px,14px,12px);
+			// @media (min-width: @screen-lg-min) {
+			// 	// font-size: 18px;
+			// }
+		}
+
+		&_buttons {
+			padding-top: 10px;
+
+			a {
+				color: @white;
+				.adaptive_font_size(15px,14px,13px,12px);
+				// font-size: 15px;
+				display: inline-block;
+				padding: 10px 20px;
+				margin-right: 10px;
+				.border_radius();
+				border: 2px solid @white;
+
+				&:hover {
+					text-decoration: none;
+					background-color: @blue;
+					border-color: @blue;
+					border-bottom: 3px solid darken(@blue, 30%);
+					padding-bottom: 9px;
+				}
+			}
+		}
+
+		&_icons {
+			margin-top: 5%;
+
+			span {
+				.adaptive_font_size(18px,17px,16px,14px);
+				// font-size: 18px;
+			}
+
+			a {
+				color: @white;
+				display: inline-block;
+				.adaptive_font_size(24px,22px,20px,18px);
+				// font-size: 24px;
+				height: 50px;
+				width: 50px;
+				line-height: 50px;
+				text-align: center;
+				margin: 0 5px;
+				.border_radius(100%);
+				background-color: fade(@black, 30%);
+
+				&:hover {
+					color: @blue;
+				}
+			}
+		}
+	}
+
+	&_arrow {
+		color: @white;
+		display: block;
+		position: absolute;
+		font-size: 18px;
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
+		text-align: center;
+		.border_radius(100%);
+		background-color: fade(@blue,30%);
+		top: 50%;
+
+		@media screen and (max-width: @screen-sm-max) {
+			top: 45%;
+		}
+
+		&_left {
+			left: 5%;
+		}		
+
+		&_right {
+			right: 5%;
+		}
+
+		&:hover {
+			color: darken(@blue, 20%);
+			background-color: @blue;
+		}
+	}
+}
+
+
+
