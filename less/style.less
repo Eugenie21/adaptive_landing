@@ -84,7 +84,6 @@ body {
 		.logo {
 			color: @white;
 			.adaptive_font_size(36px,36px,36px,36px);
-			// font-size: 36px;
 			line-height: 80px;
 
 			span {
@@ -111,8 +110,7 @@ body {
 
 				a {
 					display: block;
-					.adaptive_font_size(13px,13px,10px,8px);
-					// font-size: 13px;
+					.adaptive_font_size(13px,13px,11px,8px);
 					color: @white;
 					padding: 38px 0 40px 0;
 					border-top: 2px solid fade(@black,0%);
@@ -131,7 +129,6 @@ body {
 //SLIDER
 .slider {
 	font-family: "Lato";
-	position: relative;
 	border-bottom: 4px solid @blue;
 
 	img {
@@ -159,9 +156,6 @@ body {
 
 		p {
 			.adaptive_font_size(18px,16px,14px,12px);
-			// @media (min-width: @screen-lg-min) {
-			// 	// font-size: 18px;
-			// }
 		}
 
 		&_buttons {
@@ -169,8 +163,7 @@ body {
 
 			a {
 				color: @white;
-				.adaptive_font_size(15px,14px,13px,12px);
-				// font-size: 15px;
+				.adaptive_font_size(15px,14px,12px,10px);
 				display: inline-block;
 				padding: 10px 20px;
 				margin-right: 10px;
@@ -192,14 +185,12 @@ body {
 
 			span {
 				.adaptive_font_size(18px,17px,16px,14px);
-				// font-size: 18px;
 			}
 
 			a {
 				color: @white;
 				display: inline-block;
 				.adaptive_font_size(24px,22px,20px,18px);
-				// font-size: 24px;
 				height: 50px;
 				width: 50px;
 				line-height: 50px;
@@ -238,6 +229,15 @@ body {
 
 		&_right {
 			right: 5%;
+		}
+
+		&:focus {
+			outline: none;
+			color: @white;
+
+			&:hover {
+				color: darken(@blue, 20%);
+			}
 		}
 
 		&:hover {
