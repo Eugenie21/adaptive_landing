@@ -3,10 +3,11 @@
 <head>
     <title>Free landing page</title>
     <meta charset="utf-8">
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-    <link rel="stylesheet/less" type="text/css" href="less/style.less">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet/less" type="text/css" href="less/style.less"> -->
     <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="main_container">
@@ -129,12 +130,70 @@
 
         <div class="gallery container-fluid">
             <div class="gallery_title row">
-                <h3>summarise the features</h3>
+                <h3>show the gallery</h3>
                 <span>summarise what your product is all about</span>
+            </div>
+            <div class="row">
+                <a class="gallery_item col-md-3 col-sm-6 col-xs-12" href="#">
+                    <div class="gallery_item_image">
+                        <img src="img/gallery_image.png">
+                        <span><h5>SCREEN SHOT #1</h5></span>
+                    </div>
+                    <p>
+                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar 
+                        massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
+                    </p>
+                </a>
+                <a class="gallery_item col-md-3 col-sm-6 col-xs-12" href="#">
+                    <div class="gallery_item_image">
+                        <img src="img/gallery_image.png">
+                        <span><h5>SCREEN SHOT #2</h5></span>
+                    </div>
+                    <p>
+                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar 
+                        massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
+                    </p>
+                </a>
+                <a class="gallery_item col-md-3 col-sm-6 col-xs-12" href="#">
+                    <div class="gallery_item_image">
+                        <img src="img/gallery_image.png">
+                        <span><h5>SCREEN SHOT #3</h5></span>
+                    </div>
+                    <p>
+                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar 
+                        massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
+                    </p>
+                </a>
+                <a class="gallery_item col-md-3 col-sm-6 col-xs-12" href="#">
+                    <div class="gallery_item_image">
+                        <img src="img/gallery_image.png">
+                        <span><h5>SCREEN SHOT #4</h5></span>
+                    </div>
+                    <p>
+                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar 
+                        massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div id="videoPlayer" class="video_player video_player_paused">
+            <video poster="img/video.jpg">
+                <source src="video/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            </video>
+            <div class="video_player_caption">
+                <span id="playButton" class="video_player_caption_button fa fa-play-circle-o"></span>
+                <h3>Watch the best Technology in <span>Action</span></h3>
+                <p class="video_player_caption_text hidden-sm hidden-xs">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                </p>
             </div>
         </div>
 
     </div>
-    <script src="js/less.js" type="text/javascript"></script>
+    <!-- <script src="js/less.js" type="text/javascript"></script> -->
 </body>
 </html>
