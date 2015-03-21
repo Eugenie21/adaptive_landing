@@ -23,10 +23,7 @@ var videoPlayer = (function(){
 			return false
 	}
 
-	methodMap.updateSize = function(sizeWay = 'width') {
-
-		// console.log(sizeWay);
-
+	methodMap.updateSize = function(sizeWay) {
 
 		var windowHeight = $(window).height(),
 			windowWidth = $(window).width();
@@ -36,11 +33,7 @@ var videoPlayer = (function(){
 		var containerWidth = objectMap.container.width(),
 			containerHeight = objectMap.container.height();
 
-		// console.log(objectMap.player.height());
-
 		sizeWay == 'width' ? objectMap.player.css({width: '100%'}) : objectMap.player.css({height: '100%'});
-		
-		// console.log(objectMap.player.height());
 
 		if(methodMap.checkSquare()) {
 			if((objectMap.player.height() < objectMap.player.width())) {
@@ -61,14 +54,15 @@ var videoPlayer = (function(){
 		objectMap.player = container.find('video');
 
 		objectMap.player.on('loadeddata',function() {
-			methodMap.updateSize();
+			methodMap.updateSize('width');
 			this.play();
+			this.loop = 'loop';
 			this.muted = 'muted';
 			this.preload = 'metadata';
 		});
 
 		$(window).on('resize',function() {
-			methodMap.updateSize();
+			methodMap.updateSize('width');
 		});
 	}
 
