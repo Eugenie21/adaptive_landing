@@ -53,7 +53,7 @@ var videoPlayer = (function(){
 		objectMap.container = container;
 		objectMap.player = container.find('video');
 
-		objectMap.player.on('loadeddata',function() {
+		objectMap.player.on('canplay',function() {
 			methodMap.updateSize('width');
 			this.play();
 			this.loop = 'loop';
