@@ -4,12 +4,13 @@
     <title>Free landing page</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- <link rel="stylesheet/less" type="text/css" href="less/style.less"> -->
+    <!-- <link rel="stylesheet/less" type="text/less" href="less/style.less"> -->
     <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/snap.svg.js" type="text/javascript"></script>
     <script src="js/script.js" type="text/javascript"></script>
 </head>
-<body>
+<body data-spy="scroll" data-target=".header">
     <div class="main_container">
 
     	<div class="head_wrap container-fluid">
@@ -17,75 +18,77 @@
     			<div class="logo col-xs-2">
     				<b>ba<span>zinger</span></b>
     			</div>
-    			<ul class="nav_bar col-md-10 pull-right">
-    				<li><a href="javascript:void(0);" onclick="return false">HOME</a></li>
-    				<li><a href="javascript:void(0);" onclick="return false">FEATURES</a></li>
-    				<li><a href="javascript:void(0);" onclick="return false">GALLERY</a></li>
-    				<li><a href="javascript:void(0);" onclick="return false">VIDEO</a></li>
-    				<li><a href="javascript:void(0);" onclick="return false">PRICES</a></li>
-    				<li><a href="javascript:void(0);" onclick="return false">TESTIMONIALS</a></li>
-    				<li><a href="javascript:void(0);" onclick="return false">DOWNLOAD</a></li>
-    				<li><a href="javascript:void(0);" onclick="return false">CONTACT</a></li>
+    			<ul class="nav nav_bar col-md-10 pull-right">
+    				<li><a href="#home">HOME</a></li>
+    				<li><a href="#features">FEATURES</a></li>
+    				<li><a href="#gallery">GALLERY</a></li>
+    				<li><a href="#video">VIDEO</a></li>
+    				<li><a href="#prices">PRICES</a></li>
+    				<li><a href="#testimonials">TESTIMONIALS</a></li>
+    				<li><a href="#download">DOWNLOAD</a></li>
+    				<li><a href="#contact">CONTACT</a></li>
     			</ul>
     		</div>
     	</div>
 
-    	<div id="carousel-example-generic" class="carousel slide slider" data-ride="carousel">
+        <div id="home">
+        	<div id="carousel-example-generic" class="carousel slide slider" data-ride="carousel">
 
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            </ol>
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                </ol>
 
-            <div class="carousel-inner">
-                <div class="item active">
-        			<img src="img/slider_image.jpg">
-        			<div  class="slider_text">
-        				<h2>Simple, Beautiful <b>and Amazing</b></h2>
-        				<p>	
-        					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        					consequat. 
-        				</p>
-        				<div class="slider_text_buttons">
-        					<a href="javascript:void(0);" onclick="return false"><b>DOWNLOAD</b></a>
-        					<a href="javascript:void(0);" onclick="return false"><b>LEARN MORE</b></a>
-        				</div>
-        				<div class="slider_text_icons">
-        					<span>Available on: </span>
-        					<a href="javascript:void(0);" onclick="return false"><i class="fa fa-apple"></i></a>
-        					<a href="javascript:void(0);" onclick="return false"><i class="fa fa-android"></i></a>
-        				</div>
-        			</div>
-                </div>
-                <div class="item">
-                    <img src="img/slider_image.jpg">
-                    <div  class="slider_text">
-                        <h2>Simple, Beautiful <b>and Amazing</b></h2>
-                        <p> 
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. 
-                        </p>
-                        <div class="slider_text_buttons">
-                            <a href="javascript:void(0);" onclick="return false"><b>DOWNLOAD</b></a>
-                            <a href="javascript:void(0);" onclick="return false"><b>LEARN MORE</b></a>
-                        </div>
-                        <div class="slider_text_icons">
-                            <span>Available on: </span>
-                            <a href="javascript:void(0);" onclick="return false"><i class="fa fa-apple"></i></a>
-                            <a href="javascript:void(0);" onclick="return false"><i class="fa fa-android"></i></a>
+                <div class="carousel-inner">
+                    <div class="item active">
+            			<img src="img/slider_image.jpg">
+            			<div  class="slider_text">
+            				<h2>Simple, Beautiful <b>and Amazing</b></h2>
+            				<p>	
+            					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            					consequat. 
+            				</p>
+            				<div class="slider_text_buttons">
+            					<a href="javascript:void(0);" onclick="return false"><b>DOWNLOAD</b></a>
+            					<a href="javascript:void(0);" onclick="return false"><b>LEARN MORE</b></a>
+            				</div>
+            				<div class="slider_text_icons">
+            					<span>Available on: </span>
+            					<a href="javascript:void(0);" onclick="return false"><i class="fa fa-apple"></i></a>
+            					<a href="javascript:void(0);" onclick="return false"><i class="fa fa-android"></i></a>
+            				</div>
+            			</div>
+                    </div>
+                    <div class="item">
+                        <img src="img/slider_image.jpg">
+                        <div  class="slider_text">
+                            <h2>Simple, Beautiful <b>and Amazing</b></h2>
+                            <p> 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. 
+                            </p>
+                            <div class="slider_text_buttons">
+                                <a href="javascript:void(0);" onclick="return false"><b>DOWNLOAD</b></a>
+                                <a href="javascript:void(0);" onclick="return false"><b>LEARN MORE</b></a>
+                            </div>
+                            <div class="slider_text_icons">
+                                <span>Available on: </span>
+                                <a href="javascript:void(0);" onclick="return false"><i class="fa fa-apple"></i></a>
+                                <a href="javascript:void(0);" onclick="return false"><i class="fa fa-android"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>    
-            <a href="#carousel-example-generic" data-slide="prev" class="slider_arrow slider_arrow_left"><i class="fa fa-angle-left"></i></a>
-            <a href="#carousel-example-generic" data-slide="next" class="slider_arrow slider_arrow_right"><i class="fa fa-angle-right"></i></a>
-    	</div>
+                </div>    
+                <a href="#carousel-example-generic" data-slide="prev" class="slider_arrow slider_arrow_left"><i class="fa fa-angle-left"></i></a>
+                <a href="#carousel-example-generic" data-slide="next" class="slider_arrow slider_arrow_right"><i class="fa fa-angle-right"></i></a>
+        	</div>
+        </div>
 
-        <div class="features_wrap">
+        <div id="features" class="features_wrap">
             <div class="features container-fluid">
                 <div class="features_title row">
                     <h3>summarise the features</h3>
@@ -128,7 +131,7 @@
             </div>
         </div>
 
-        <div class="gallery container-fluid">
+        <div id="gallery" class="gallery container-fluid">
             <div class="gallery_title row">
                 <h3>show the gallery</h3>
                 <span>summarise what your product is all about</span>
@@ -177,30 +180,32 @@
             </div>
         </div>
 
-        <div id="videoPlayer" class="video_player">
-            <video poster="img/video.jpg">
-                <source src="video/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-                <source src="video/video.webm" type='video/webm; codecs="vp8, vorbis"' />
-                Video tag not supported. Download the video <a href="video/video.webm">here</a>.
-            </video>
-            <a href="javascript:void(0);" onclick="return false" class="video_player_caption">
-                <h3>Watch the best Technology in <span>Action</span></h3>
-                <p class="video_player_caption_text hidden-sm hidden-xs">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                </p>
-            </a>
+        <div id="video">
+            <div id="videoPlayer" class="video_player">
+                <video poster="img/video.jpg">
+                    <source src="video/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                    <source src="video/video.webm" type='video/webm; codecs="vp8, vorbis"' />
+                    Video tag not supported. Download the video <a href="video/video.webm">here</a>.
+                </video>
+                <a href="javascript:void(0);" onclick="return false" class="video_player_caption">
+                    <h3>Watch the best Technology in <span>Action</span></h3>
+                    <p class="video_player_caption_text hidden-sm hidden-xs">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    </p>
+                </a>
+            </div>
         </div>
 
-        <div class="prices container-fluid">
+        <div id="prices" class="prices container-fluid">
             <div class="prices_title row">
                 <h3>choose your price</h3>
                 <span>summarise what your product is all about</span>
             </div>
-            <div class="row vertical-align">
-                <div class="col-sm-offset-1 col-sm-3">
+            <div class="align_block row">
+                <div class="col-sm-offset-1 col-sm-3 col-xs-12">
                     <div class="prices_item_green">
                         <h5>BASIC PACKAGE</h5>
                         <h3>20$</h3>
@@ -212,7 +217,7 @@
                         <a href="javascript:void(0);" onclick="return false">PURCHASE</a>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-12">
                     <div class="prices_item_blue">
                         <h5>PROFESSIONAL PACKAGE</h5>
                         <h3>25$</h3>
@@ -225,7 +230,7 @@
                         <a href="javascript:void(0);" onclick="return false">PURCHASE</a>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 col-xs-12">
                     <div class="prices_item_orange">
                         <h5>ADVANCED PACKAGE</h5>
                         <h3>30$</h3>
@@ -237,6 +242,87 @@
                         <a href="javascript:void(0);" onclick="return false">PURCHASE</a>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="testimonials" class="testimonials container-fluid">
+
+            <h3>testimonials</h3>
+
+            <div id="carousel-example-generic" class="carousel slide testimonials_slider" data-ride="carousel">
+
+                <div class="carousel-inner">
+                    <div class="item active testimonials_slider_item">
+                        <svg id="hex_0" class="hex_img"></svg>
+                        <div class="testimonials_slider_item_text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. 
+                            </p>
+                            <p class="testimonials_slider_item_text_right"><i>John Doe</i></p>
+                            <p class="testimonials_slider_item_text_right"><i>from some company</i></p>
+                        </div>
+                    </div>
+                    <div class="item testimonials_slider_item">
+                        <svg id="hex_1" class="hex_img"></svg>
+                        <div class="testimonials_slider_item_text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. 
+                            </p>
+                            <p class="testimonials_slider_item_text_right"><i>John Doe</i></p>
+                            <p class="testimonials_slider_item_text_right"><i>from some company</i></p>
+                        </div>
+                    </div>
+                    <div class="item testimonials_slider_item">
+                        <svg id="hex_2" class="hex_img"></svg>
+                        <div class="testimonials_slider_item_text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. 
+                            </p>
+                            <p class="testimonials_slider_item_text_right"><i>John Doe</i></p>
+                            <p class="testimonials_slider_item_text_right"><i>from some company</i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="download" class="download container-fluid">
+            
+                <h3>Do you Like this app?</h3>
+
+                <a href="javascript:void(0)" onclick="return false">DOWNLOAD NOW</a>
+        </div>
+
+        <div id="contact" class="contact container-fluid">
+            <form action="javascript:void(0)">
+                <h4>Contact</h4>
+                <p><input type="text" placeholder="Your name"></p>
+                <p><input type="text" placeholder="Your email"></p>
+                <p><input type="text" placeholder="Subject"></p>
+                <p><textarea>Message</textarea></p>
+                <p class="contact_submit"><input type="submit" value="Send"></p>
+            </form>
+        </div>
+
+        <div class="foot_wrap container-fluid">
+            <div class="foot row">
+                <div class="col-xs-6 text-left"><p>Copyright © 2013 | bazinger | All Rights Reserved</p></div>
+                <div class="col-xs-6 text-right"><p>Terms of Service | Privacy Policy</p></div>
             </div>
         </div>
 
