@@ -70,5 +70,40 @@ var videoPlayer = (function(){
 
 }());
 
-$(document).ready(function() { videoPlayer.initPlayer($('#videoPlayer')); });
+$(document).ready(function() { 
+
+	videoPlayer.initPlayer($('#videoPlayer'));
+
+	var hexArr = $('.hex_img');
+	
+	for(var i=0; i<hexArr.length; i++) {
+
+		var h = new Snap('#hex_'+i).attr({
+				width: '165px',
+				height: '180px'
+			}),
+			hex = h.polygon([80, 5, 5, 50, 5, 125, 80, 170, 155, 125, 155, 50, 80, 5]),
+			filter = h.filter(Snap.filter.shadow(2, 2, 2, '#000', .5)),
+			circleBorder = h.circle((165/2-2),(180/2-2),40).attr({
+				stroke: '#fff',
+				strokeWidth: '5px',
+				fill: 'none'
+			}),
+			circle = h.circle((165/2-2),(180/2-2),38).attr({
+				fill: '#fff'
+			}),
+			c = h.image('img/user_image.png',43,50,77,77).attr({
+				mask: circle
+			});
+
+			hex.attr({
+				stroke: '#fff',
+				strokeWidth: '10px',
+				fill: '#4bcaff',
+				'stroke-linejoin': 'round',
+				filter: filter
+			});
+	}
+
+});
 
