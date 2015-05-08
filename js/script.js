@@ -50,7 +50,11 @@ var videoPlayer = (function(){
 
 	methodMap.initPlayer = function(container) {
 
+		var windowHeight = $(window).height(),
+			windowWidth = $(window).width();
+
 		objectMap.container = container;
+		objectMap.container.css('height', (windowHeight > windowWidth) ? windowHeight/3 : windowHeight/2);
 		objectMap.player = container.find('video');
 
 		objectMap.player.on('canplay',function() {
@@ -103,6 +107,12 @@ $(document).ready(function() {
 				'stroke-linejoin': 'round',
 				filter: filter
 			});
+	}
+
+	console.log($.browser);
+
+	if($.browser.safari || $.browser.chrome || $.browser.opera) {
+		$('.logo span').addClass('webkit');
 	}
 
 });
