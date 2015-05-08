@@ -12,27 +12,42 @@
 //Fonts
 @font-face {
 	font-family: "DroidSans";
-	src: url('../font/DroidSans.ttf'); 
+	src: url('../font/droidsans_regular/DroidSans-webfont.ttf');
+	src: url('../font/droidsans_regular/DroidSans-webfont.svg'); 
+	src: url('../font/droidsans_regular/DroidSans-webfont.eot');
+	src: url('../font/droidsans_regular/DroidSans-webfont.woff');
 }
 
 @font-face {
 	font-family: "DroidSans_Bold";
-	src: url('../font/DroidSans-Bold.ttf'); 
+	src: url('../font/droidsans_bold/DroidSans-Bold-webfont.ttf'); 
+	src: url('../font/droidsans_bold/DroidSans-Bold-webfont.svg'); 
+	src: url('../font/droidsans_bold/DroidSans-Bold-webfont.eot'); 
+	src: url('../font/droidsans_bold/DroidSans-Bold-webfont.woff'); 
 }
 
 @font-face {
 	font-family: "Lato";
-	src: url('../font/Lato-Light.ttf');
+	src: url('../font/LatoLight/lato-regular.ttf');
+	src: url('../font/LatoLight/lato-regular.svg');
+	src: url('../font/LatoLight/lato-regular.eot');
+	src: url('../font/LatoLight/lato-regular.woff');
 }
 
 @font-face {
 	font-family: "Lato_Bold";
-	src: url('../font/Lato-Bold.ttf');
+	src: url('../font/LatoBold/lato-bold.ttf');
+	src: url('../font/LatoBold/lato-bold.svg');
+	src: url('../font/LatoBold/lato-bold.eot');
+	src: url('../font/LatoBold/lato-bold.woff');
 }
 
 @font-face {
 	font-family: "Lato_Black";
-	src: url('../font/Lato-Black.ttf');
+	src: url('../font/LatoBlack/lato-black.ttf');
+	src: url('../font/LatoBlack/lato-black.svg');
+	src: url('../font/LatoBlack/lato-black.eot');
+	src: url('../font/LatoBlack/lato-black.woff');
 }
 
 //CUSTOM VARIABLES
@@ -44,11 +59,11 @@
 	.center-block();
 }
 
-.border_radius(@value: 5px) {
-	-moz-border-radius: @value;
-	-webkit-border-radius: @value;
-	-o-border-radius: @value;
-	border-radius: @value;
+.border_radius(@value1: 5px, @value2: 5px, @value3: 5px, @value4: 5px) {
+	-moz-border-radius: @value1 @value2 @value3 @value4;
+	-webkit-border-radius: @value1 @value2 @value3 @value4;
+	-o-border-radius: @value1 @value2 @value3 @value4;
+	border-radius: @value1 @value2 @value3 @value4;
 }
 
 .box_shadow(@hor,@vert,@spr,@size,@col) {
@@ -131,8 +146,15 @@ body {
 				&:after {
 					content: url("../img/signal_image.png");
 					position: absolute;
-					top: -47px;
-					left: 8px;
+					top: -1.25em;
+					left: .23em;
+				}
+			}
+
+			.webkit {
+				&:after {
+					top: -1.3em;
+					left: .2em;
 				}
 			}
 		}
@@ -258,7 +280,7 @@ body {
 				line-height: 50px;
 				text-align: center;
 				margin: 0 5px;
-				.border_radius(100%);
+				.border_radius(100%, 100%, 100%, 100%);
 				background-color: fade(@black, 30%);
 
 				&:focus {
@@ -282,7 +304,7 @@ body {
 		width: 50px;
 		line-height: 50px;
 		text-align: center;
-		.border_radius(100%);
+		.border_radius(100%, 100%, 100%, 100%);
 		background-color: fade(@blue,30%);
 		top: 50%;
 
@@ -363,7 +385,7 @@ body {
 				font-size: 55px;
 				color: @white;
 				background-color: @blue;
-				.border_radius(100%);
+				.border_radius(100%, 100%, 100%, 100%);
 				height: 120px;
 				width: 120px;
 				line-height: 120px;
@@ -439,7 +461,7 @@ body {
 		&_image {
 			height: 200px;
 			position: relative;
-			.border_radius(10px);
+			.border_radius(10px, 10px, 10px, 10px);
 			overflow: hidden;
 			margin-bottom: 20px;
 			z-index: 5;
@@ -467,6 +489,7 @@ body {
 			img {
 				width: 100%;
 				height: 100%;
+				.border_radius(10px, 10px, 10px, 10px);
 			}
 
 			span {
@@ -477,6 +500,7 @@ body {
 				width: 100%;
 				display: block;
 				background-color: fade(@black,30%);
+				.border_radius(0px, 0px, 10px, 10px);
 
 				h5 {
 					font-weight: bold;
@@ -549,6 +573,15 @@ body {
 
 	video {
 		position: absolute;
+		display: block;
+		// height: 100%;
+
+		p {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: 6;
+		}
 	}
 }
 
@@ -561,7 +594,7 @@ body {
 	font-family: "Lato_Bold";
 	background-color: lighten(@black, 95%);
 	border: 1px solid lighten(@black, 80%);
-	.border_radius(5px);
+	.border_radius();
 	margin-bottom: 20px;
 
 	h5 {
@@ -596,7 +629,7 @@ body {
 		font-size: 15px;
 		background-color: @main_color;
 		color: @white;
-		.border_radius(5px);
+		.border_radius();
 
 		&:hover {
 			text-decoration: none;
@@ -747,15 +780,30 @@ body {
 //CONtACT
 .contact {
 	padding: 100px 0;
-	background: url("../img/map_image.png");
-	background-size: 100% 100%;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+		@media screen and (min-width: 1500px) { 
+			width: 100%;
+		}
+
+		@media screen and (max-width: @screen-sm-max) { 
+			height: 100%;	
+		}
+	}
 
 	form {
 		padding: 30px 20px 20px;
 		width: 300px;
 		margin: 0 auto;
 		background-color: fade(@blue, 50%);
-		.border_radius(10px);
+		.border_radius(10px, 10px, 10px, 10px);
 		border: 1px solid fade(lighten(@black, 80%),50%);
 		.box_shadow(0, 0, 2px, 0px, fade(@black, 50%));
 
