@@ -71,7 +71,6 @@ var videoPlayer = (function(){
 	}
 
 	return {initPlayer: methodMap.initPlayer};
-
 }());
 
 $(document).ready(function() { 
@@ -109,7 +108,33 @@ $(document).ready(function() {
 			});
 	}
 
-	console.log($.browser);
+	var hidden = false;
+
+	$('.main_container').on( 'DOMMouseScroll mousewheel', function ( event ) {
+
+		if( event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+			if(!hidden){
+				$('.head_wrap').animate({
+					top: '-95px'
+				}, 500);
+				hidden = true;
+			}
+		} else {
+			if(hidden) {
+				$('.head_wrap').animate({
+					top: '0px'
+				}, 500);
+				hidden = false;
+			}
+		}
+	});
+
+	$('.nav a, .nav li').on('click', function() {
+		$('.head_wrap').css({
+			top: '-95px'
+		}, 500);
+		hidden = true;
+	})
 
 	if($.browser.safari || $.browser.chrome || $.browser.opera) {
 		$('.logo span').addClass('webkit');
